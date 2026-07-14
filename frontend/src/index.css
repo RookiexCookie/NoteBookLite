@@ -1,0 +1,177 @@
+@import "tailwindcss";
+
+:root {
+  /* Soft, low-contrast Catppuccin Mocha palette - extremely gentle on the eyes */
+  --bg-app: #1e1e2e;
+  --bg-app-2: #181825;
+  --surface: #313244;
+  --surface-strong: #45475a;
+  --surface-hover: #3c3d52;
+  --surface-muted: #11111b;
+  --border: #313244;
+  --border-hover: #45475a;
+  --text-main: #cdd6f4;
+  --text-muted: #a6adc8;
+
+  /* Pastel Catppuccin Accent Colors */
+  --accent: #89b4fa; /* Blue */
+  --accent-light: rgba(137, 180, 250, 0.08);
+  --accent-strong: rgba(137, 180, 250, 0.15);
+  --accent-gradient: #89b4fa;
+
+  --accent-purple: #cba6f7; /* Mauve */
+  --accent-purple-light: rgba(203, 166, 247, 0.08);
+  --accent-purple-gradient: #cba6f7;
+
+  --accent-emerald: #a6e3a1; /* Green */
+  --accent-emerald-light: rgba(166, 227, 161, 0.08);
+
+  --success: #a6e3a1;
+  --error: #f38ba8; /* Red */
+
+  --font-sans: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+
+  color-scheme: dark;
+  
+  background-color: var(--bg-app);
+  color: var(--text-main);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: var(--bg-app);
+  color: var(--text-main);
+  position: relative;
+  min-height: 100vh;
+}
+
+.app-shell {
+  position: relative;
+  isolation: isolate;
+  background-color: var(--bg-app);
+}
+
+/* Beautiful curved elements */
+.glass-panel {
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+}
+
+.surface-card {
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+}
+
+.gradient-border {
+  position: relative;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(166, 173, 200, 0.15);
+  border-radius: 99px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(166, 173, 200, 0.3);
+}
+
+/* Perspective & 3D Cards */
+.perspective {
+  perspective: 1200px;
+}
+.preserve-3d {
+  transform-style: preserve-3d;
+}
+.backface-hidden {
+  backface-visibility: hidden;
+}
+.rotate-y-180 {
+  transform: rotateY(180deg);
+}
+
+/* Sidebar and layout panel styling - Flat, clean, solid Catppuccin style */
+.glassmorphism {
+  background-color: var(--bg-app-2);
+  border-right: 1px solid var(--border);
+}
+
+/* Soft flat curved buttons */
+.btn-primary {
+  background-color: var(--accent);
+  color: #11111b; /* High-contrast dark text against soft pastel blue */
+  transition: background-color 0.15s ease-in-out, transform 0.1s ease-in-out;
+  border-radius: 12px;
+  font-weight: 600;
+}
+.btn-primary:hover {
+  background-color: #a6e3a1; /* Hover turns green for interactive feedback */
+  color: #11111b;
+  transform: translateY(-0.5px);
+}
+.btn-primary:active {
+  transform: translateY(0);
+}
+
+.btn-purple {
+  background-color: var(--accent-purple);
+  color: #11111b; /* High-contrast dark text against soft mauve */
+  transition: background-color 0.15s ease-in-out, transform 0.1s ease-in-out;
+  border-radius: 12px;
+  font-weight: 600;
+}
+.btn-purple:hover {
+  background-color: #b4befe; /* Lavender hover */
+  color: #11111b;
+  transform: translateY(-0.5px);
+}
+.btn-purple:active {
+  transform: translateY(0);
+}
+
+.bubble-ai {
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+}
+
+.bubble-user {
+  background-color: var(--accent-light);
+  border: 1px solid rgba(137, 180, 250, 0.25);
+  color: var(--text-main);
+  border-radius: 16px;
+}
+
+.bubble-user p,
+.bubble-user li,
+.bubble-user strong,
+.bubble-user h1,
+.bubble-user h2,
+.bubble-user h3 {
+  color: var(--text-main) !important;
+}
+
+.bubble-user .text-[--text-muted],
+.bubble-user .text-blue-100 {
+  color: var(--text-muted) !important;
+}
